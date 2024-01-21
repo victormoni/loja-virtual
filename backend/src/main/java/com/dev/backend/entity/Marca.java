@@ -13,15 +13,14 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "estado")
-public class Estado {
-  
+@Table(name = "marca")
+public class Marca {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String nome;
-    private String sigla;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataCriacao;
