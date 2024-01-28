@@ -31,13 +31,13 @@ public class MarcaController {
     }
 
     @PostMapping("/")
-    public Marca inserir(@RequestBody Marca marca) {
-        return marcaService.inserir(marca);
+    public Marca inserir(@RequestBody Marca obj) {
+        return marcaService.inserir(obj);
     }
 
     @PutMapping("/")
-    public Marca alterar(@RequestBody Marca marca) {
-        return marcaService.alterar(marca);
+    public Marca alterar(@RequestBody Marca obj) {
+        return marcaService.alterar(obj);
     }
 
     @DeleteMapping("/{id}")

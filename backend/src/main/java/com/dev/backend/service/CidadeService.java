@@ -19,19 +19,19 @@ public class CidadeService {
         return cidadeRepository.findAll();
     }
 
-    public Cidade inserir(Cidade objeto) {
-        objeto.setDataCriacao(new Date());
-        Cidade objetoNovo = cidadeRepository.saveAndFlush(objeto);
-        return objetoNovo;
+    public Cidade inserir(Cidade obj) {
+        obj.setDataCriacao(new Date());
+        Cidade objNovo = cidadeRepository.saveAndFlush(obj);
+        return objNovo;
     }
 
-    public Cidade alterar(Cidade objeto) {
-        objeto.setDataAtualizacao(new Date());
-        return cidadeRepository.saveAndFlush(objeto);
+    public Cidade alterar(Cidade obj) {
+        obj.setDataAtualizacao(new Date());
+        return cidadeRepository.saveAndFlush(obj);
     }
 
     public void excluir(Long id) {
-        Cidade objeto = cidadeRepository.findById(id).get();
-        cidadeRepository.delete(objeto);
+        Cidade obj = cidadeRepository.findById(id).get();
+        cidadeRepository.delete(obj);
     }
 }

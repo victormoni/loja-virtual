@@ -1,6 +1,7 @@
 package com.dev.backend.entity;
 
 import java.util.Date;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,11 +14,11 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "categoria")
-public class Categoria {
-
+@Table(name = "permissao")
+public class Permissao{
+  
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String nome;

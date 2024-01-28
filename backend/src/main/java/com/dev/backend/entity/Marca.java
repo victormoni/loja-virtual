@@ -11,8 +11,8 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import lombok.Data;
 
-@Entity
 @Data
+@Entity
 @Table(name = "marca")
 public class Marca {
 
@@ -27,5 +27,4 @@ public class Marca {
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataAtualizacao;
-
 }

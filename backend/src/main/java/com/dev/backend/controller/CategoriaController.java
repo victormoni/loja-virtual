@@ -30,13 +30,13 @@ public class CategoriaController {
     }
 
     @PostMapping("/")
-    public Categoria inserir(@RequestBody Categoria categoria) {
-        return categoriaService.inserir(categoria);
+    public Categoria inserir(@RequestBody Categoria obj) {
+        return categoriaService.inserir(obj);
     }
 
     @PutMapping("/")
-    public Categoria alterar(@RequestBody Categoria categoria) {
-        return categoriaService.alterar(categoria);
+    public Categoria alterar(@RequestBody Categoria obj) {
+        return categoriaService.alterar(obj);
     }
 
     @DeleteMapping("/{id}")

@@ -29,13 +29,13 @@ public class EstadoController {
     }
 
     @PostMapping("/")
-    public Estado inserir(@RequestBody Estado estado) {
-        return estadoService.inserir(estado);
+    public Estado inserir(@RequestBody Estado obj) {
+        return estadoService.inserir(obj);
     }
 
     @PutMapping("/")
-    public Estado alterar(@RequestBody Estado estado) {
-        return estadoService.alterar(estado);
+    public Estado alterar(@RequestBody Estado obj) {
+        return estadoService.alterar(obj);
     }
 
     @DeleteMapping("/{id}")

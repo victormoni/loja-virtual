@@ -11,36 +11,39 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
-import com.dev.backend.entity.Cidade;
-import com.dev.backend.service.CidadeService;
+import com.dev.backend.entity.ProdutoImagens;
+import com.dev.backend.service.ProdutoImagensService;
+
 
 @RestController
-@RequestMapping("/api/cidade")
-public class CidadeController {
+@RequestMapping("/api/produtoImagens")
+public class ProdutoImagensController {
 
     @Autowired
-    private CidadeService cidadeService;
+    private ProdutoImagensService produtoImagensService;
 
     @GetMapping("/")
-    public List<Cidade> buscarTodos() {
-        return cidadeService.buscarTodos();
+    public List<ProdutoImagens> buscarTodos() {
+        return produtoImagensService.buscarTodos();
     }
 
     @PostMapping("/")
-    public Cidade inserir(@RequestBody Cidade obj) {
-        return cidadeService.inserir(obj);
+    public ProdutoImagens inserir(@RequestParam("idProduto") Long idProduto, @RequestParam("file") MultipartFile file) {
+        return produtoImagensService.inserir(idProduto, file);
     }
 
     @PutMapping("/")
-    public Cidade alterar(@RequestBody Cidade obj) {
-        return cidadeService.alterar(obj);
+    public ProdutoImagens alterar(@RequestBody ProdutoImagens obj) {
+        return produtoImagensService.alterar(obj);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> excluir(@PathVariable("id") Long id) {
-        cidadeService.excluir(id);
+        produtoImagensService.excluir(id);
         return ResponseEntity.ok().build();
     }
 }
