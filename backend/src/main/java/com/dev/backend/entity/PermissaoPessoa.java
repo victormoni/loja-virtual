@@ -23,11 +23,11 @@ public class PermissaoPessoa {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "Pessoa")
+    @JoinColumn(name = "idPessoa")
     private Pessoa pessoa;
 
     @ManyToOne
-    @JoinColumn(name = "Permissao")
+    @JoinColumn(name = "idPermissao")
     private Pessoa permissao;
 
     @Temporal(TemporalType.TIMESTAMP)
