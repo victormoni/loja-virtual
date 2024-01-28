@@ -27,8 +27,7 @@ public class MarcaService {
 
     public Marca alterar(Marca marca) {
         marca.setDataAtualizacao(new Date());
-        Marca marcaNova = marcaRepository.saveAndFlush(marca);
-        return marcaNova;
+        return marcaRepository.saveAndFlush(marca);
     }
 
     public void excluir(Long id) {

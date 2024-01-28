@@ -27,8 +27,7 @@ public class CategoriaService {
 
     public Categoria alterar(Categoria categoria) {
         categoria.setDataAtualizacao(new Date());
-        Categoria categoriaNova = categoriaRepository.saveAndFlush(categoria);
-        return categoriaNova;
+        return categoriaRepository.saveAndFlush(categoria);
     }
 
     public void excluir(Long id) {
