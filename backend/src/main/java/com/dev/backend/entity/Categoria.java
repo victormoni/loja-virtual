@@ -27,5 +27,4 @@ public class Categoria {
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataAtualizacao;
-
 }

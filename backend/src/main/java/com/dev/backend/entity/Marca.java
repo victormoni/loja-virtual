@@ -27,5 +27,4 @@ public class Marca {
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataAtualizacao;
-
 }

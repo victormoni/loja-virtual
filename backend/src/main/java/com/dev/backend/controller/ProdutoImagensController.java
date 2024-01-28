@@ -11,36 +11,39 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
-import com.dev.backend.entity.PermissaoPessoa;
-import com.dev.backend.service.PermissaoPessoaService;
+import com.dev.backend.entity.ProdutoImagens;
+import com.dev.backend.service.ProdutoImagensService;
+
 
 @RestController
-@RequestMapping("/api/permissaoPessoa")
-public class PermissaoPessoaController {
+@RequestMapping("/api/produtoImagens")
+public class ProdutoImagensController {
 
     @Autowired
-    private PermissaoPessoaService permissaoPessoaService;
+    private ProdutoImagensService produtoImagensService;
 
     @GetMapping("/")
-    public List<PermissaoPessoa> buscarTodos() {
-        return permissaoPessoaService.buscarTodos();
+    public List<ProdutoImagens> buscarTodos() {
+        return produtoImagensService.buscarTodos();
     }
 
     @PostMapping("/")
-    public PermissaoPessoa inserir(@RequestBody PermissaoPessoa obj) {
-        return permissaoPessoaService.inserir(obj);
+    public ProdutoImagens inserir(@RequestParam("idProduto") Long idProduto, @RequestParam("file") MultipartFile file) {
+        return produtoImagensService.inserir(idProduto, file);
     }
 
     @PutMapping("/")
-    public PermissaoPessoa alterar(@RequestBody PermissaoPessoa obj) {
-        return permissaoPessoaService.alterar(obj);
+    public ProdutoImagens alterar(@RequestBody ProdutoImagens obj) {
+        return produtoImagensService.alterar(obj);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> excluir(@PathVariable("id") Long id) {
-        permissaoPessoaService.excluir(id);
+        produtoImagensService.excluir(id);
         return ResponseEntity.ok().build();
     }
 }
