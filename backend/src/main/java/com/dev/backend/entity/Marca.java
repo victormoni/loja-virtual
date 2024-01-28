@@ -11,8 +11,8 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import lombok.Data;
 
-@Entity
 @Data
+@Entity
 @Table(name = "marca")
 public class Marca {
 

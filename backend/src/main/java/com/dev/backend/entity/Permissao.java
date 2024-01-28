@@ -6,28 +6,25 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import lombok.Data;
 
-
-@Entity
 @Data
-@Table(name = "cidade")
-public class Cidade {
+@Entity
+@Table(name = "permissao")
+public class Permissao{
   
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String nome;
-    
-    @ManyToOne
-    @JoinColumn(name="idEstado")
-    private Estado estado;
+    private String cpf;
+    private String email;
+    private String senha;
+    private String endereco;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataCriacao;

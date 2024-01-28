@@ -19,19 +19,19 @@ public class MarcaService {
         return marcaRepository.findAll();
     }
 
-    public Marca inserir(Marca marca) {
-        marca.setDataCriacao(new Date());
-        Marca marcaNova = marcaRepository.saveAndFlush(marca);
-        return marcaNova;
+    public Marca inserir(Marca obj) {
+        obj.setDataCriacao(new Date());
+        Marca objNovo = marcaRepository.saveAndFlush(obj);
+        return objNovo;
     }
 
-    public Marca alterar(Marca marca) {
-        marca.setDataAtualizacao(new Date());
-        return marcaRepository.saveAndFlush(marca);
+    public Marca alterar(Marca obj) {
+        obj.setDataAtualizacao(new Date());
+        return marcaRepository.saveAndFlush(obj);
     }
 
     public void excluir(Long id) {
-        Marca marca = marcaRepository.findById(id).get();
-        marcaRepository.delete(marca);
+        Marca obj = marcaRepository.findById(id).get();
+        marcaRepository.delete(obj);
     }
 }

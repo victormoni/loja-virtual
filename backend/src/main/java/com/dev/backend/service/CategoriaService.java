@@ -19,19 +19,19 @@ public class CategoriaService {
         return categoriaRepository.findAll();
     }
 
-    public Categoria inserir(Categoria categoria) {
-        categoria.setDataCriacao(new Date());
-        Categoria categoriaNova = categoriaRepository.saveAndFlush(categoria);
-        return categoriaNova;
+    public Categoria inserir(Categoria obj) {
+        obj.setDataCriacao(new Date());
+        Categoria objNovo = categoriaRepository.saveAndFlush(obj);
+        return objNovo;
     }
 
-    public Categoria alterar(Categoria categoria) {
-        categoria.setDataAtualizacao(new Date());
-        return categoriaRepository.saveAndFlush(categoria);
+    public Categoria alterar(Categoria obj) {
+        obj.setDataAtualizacao(new Date());
+        return categoriaRepository.saveAndFlush(obj);
     }
 
     public void excluir(Long id) {
-        Categoria categoria = categoriaRepository.findById(id).get();
-        categoriaRepository.delete(categoria);
+        Categoria obj = categoriaRepository.findById(id).get();
+        categoriaRepository.delete(obj);
     }
 }
