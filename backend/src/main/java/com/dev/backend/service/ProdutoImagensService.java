@@ -16,6 +16,8 @@ import com.dev.backend.entity.ProdutoImagens;
 import com.dev.backend.repository.ProdutoImagensRepository;
 import com.dev.backend.repository.ProdutoRepository;
 
+import lombok.NonNull;
+
 @Service
 public class ProdutoImagensService {
 
@@ -29,7 +31,7 @@ public class ProdutoImagensService {
         return produtoImagensRepository.findAll();
     }
 
-    public ProdutoImagens inserir(Long idProduto, MultipartFile file) {
+    public ProdutoImagens inserir(@NonNull Long idProduto, MultipartFile file) {
 
         Produto produto = produtoRepository.findById(idProduto).get();
         ProdutoImagens obj = new ProdutoImagens();
@@ -46,7 +48,7 @@ public class ProdutoImagensService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
+
         obj.setProduto(produto);
         obj.setDataCriacao(new Date());
         obj = produtoImagensRepository.saveAndFlush(obj);
@@ -59,8 +61,11 @@ public class ProdutoImagensService {
         return produtoImagensRepository.saveAndFlush(obj);
     }
 
-    public void excluir(Long id) {
+    public void excluir(@NonNull Long id) {
+
         ProdutoImagens obj = produtoImagensRepository.findById(id).get();
-        produtoImagensRepository.delete(obj);
+
+        if (obj != null) 
+            produtoImagensRepository.delete(obj);
     }
 }

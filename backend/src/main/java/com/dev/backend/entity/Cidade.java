@@ -13,9 +13,8 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import lombok.Data;
 
-
-@Entity
 @Data
+@Entity
 @Table(name = "cidade")
 public class Cidade {
   

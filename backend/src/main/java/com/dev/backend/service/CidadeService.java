@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import com.dev.backend.entity.Cidade;
 import com.dev.backend.repository.CidadeRepository;
 
+import lombok.NonNull;
+
 @Service
 public class CidadeService {
 
@@ -30,8 +32,10 @@ public class CidadeService {
         return cidadeRepository.saveAndFlush(obj);
     }
 
-    public void excluir(Long id) {
+    public void excluir(@NonNull Long id) {
         Cidade obj = cidadeRepository.findById(id).get();
+
+        if(obj != null)
         cidadeRepository.delete(obj);
     }
 }
