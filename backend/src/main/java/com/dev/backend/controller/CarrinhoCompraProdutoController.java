@@ -17,7 +17,7 @@ import com.dev.backend.entity.CarrinhoCompraProduto;
 import com.dev.backend.service.CarrinhoCompraProdutoService;
 
 @RestController
-@RequestMapping("/api/CarrinhoCompraProduto")
+@RequestMapping("/api/carrinhoCompraProduto")
 public class CarrinhoCompraProdutoController {
 
     @Autowired
