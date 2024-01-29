@@ -9,8 +9,6 @@ import org.springframework.stereotype.Service;
 import com.dev.backend.entity.Permissao;
 import com.dev.backend.repository.PermissaoRepository;
 
-import lombok.NonNull;
-
 @Service
 public class PermissaoService {
 
@@ -32,10 +30,8 @@ public class PermissaoService {
         return permissaoRepository.saveAndFlush(obj);
     }
 
-    public void excluir(@NonNull Long id) {
+    public void excluir(Long id) {
         Permissao obj = permissaoRepository.findById(id).get();
-       
-        if(obj != null)
         permissaoRepository.delete(obj);
     }
 }

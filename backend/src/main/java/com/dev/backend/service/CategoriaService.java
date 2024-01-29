@@ -9,8 +9,6 @@ import org.springframework.stereotype.Service;
 import com.dev.backend.entity.Categoria;
 import com.dev.backend.repository.CategoriaRepository;
 
-import lombok.NonNull;
-
 @Service
 public class CategoriaService {
 
@@ -32,10 +30,8 @@ public class CategoriaService {
         return categoriaRepository.saveAndFlush(obj);
     }
 
-    public void excluir(@NonNull Long id) {
+    public void excluir(Long id) {
         Categoria obj = categoriaRepository.findById(id).get();
-
-        if(obj != null)
         categoriaRepository.delete(obj);
     }
 }
