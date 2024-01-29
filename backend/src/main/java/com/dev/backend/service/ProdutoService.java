@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import com.dev.backend.entity.Produto;
 import com.dev.backend.repository.ProdutoRepository;
 
+import lombok.NonNull;
+
 
 @Service
 public class ProdutoService {
@@ -31,8 +33,9 @@ public class ProdutoService {
         return produtoRepository.saveAndFlush(obj);
     }
 
-    public void excluir(Long id) {
+    public void excluir(@NonNull Long id) {
         Produto obj = produtoRepository.findById(id).get();
+        if(obj!=null)
         produtoRepository.delete(obj);
     }
 }

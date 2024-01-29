@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import com.dev.backend.entity.Marca;
 import com.dev.backend.repository.MarcaRepository;
 
+import lombok.NonNull;
+
 @Service
 public class MarcaService {
 
@@ -30,8 +32,9 @@ public class MarcaService {
         return marcaRepository.saveAndFlush(obj);
     }
 
-    public void excluir(Long id) {
+    public void excluir(@NonNull Long id) {
         Marca obj = marcaRepository.findById(id).get();
+        if(obj!=null)
         marcaRepository.delete(obj);
     }
 }
