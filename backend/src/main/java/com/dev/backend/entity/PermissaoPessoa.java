@@ -28,7 +28,7 @@ public class PermissaoPessoa {
 
     @ManyToOne
     @JoinColumn(name = "idPermissao")
-    private Pessoa permissao;
+    private Permissao permissao;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataCriacao;
