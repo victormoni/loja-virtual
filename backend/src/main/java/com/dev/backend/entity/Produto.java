@@ -40,5 +40,4 @@ public class Produto {
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataAtualizacao;
-
 }

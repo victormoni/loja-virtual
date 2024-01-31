@@ -44,5 +44,4 @@ public class CategoriaController {
         categoriaService.excluir(id);
         return ResponseEntity.ok().build();
     }
-
 }

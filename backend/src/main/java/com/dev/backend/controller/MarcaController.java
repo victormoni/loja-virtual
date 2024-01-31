@@ -44,6 +44,5 @@ public class MarcaController {
     public ResponseEntity<Void> deletar(@PathVariable("id") Long id) {
         marcaService.excluir(id);
         return ResponseEntity.ok().build();
-
     }
 }
