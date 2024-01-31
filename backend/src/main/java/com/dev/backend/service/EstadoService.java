@@ -34,7 +34,7 @@ public class EstadoService {
 
     public void excluir(@NonNull Long id) {
         Estado obj = estadoRepository.findById(id).get();
-        if(obj != null)
+        if (obj != null)
         estadoRepository.delete(obj);
     }
 }

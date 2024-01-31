@@ -39,7 +39,7 @@ public class ProdutoImagensService {
         try {
             if (!file.isEmpty()) {
 
-                String nomeImagem = String.valueOf(produto.getId()) + file.getOriginalFilename();
+                String nomeImagem = String.valueOf(produto.getId()) + ". " + file.getOriginalFilename();
                 byte[] bytes = file.getBytes();
                 Path caminho = Paths.get("C:/Users/Victor Moni/OneDrive/Imagens/Imagens/" + nomeImagem);
                 Files.write(caminho, bytes);

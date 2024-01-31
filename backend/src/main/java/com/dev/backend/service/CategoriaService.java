@@ -34,7 +34,6 @@ public class CategoriaService {
 
     public void excluir(@NonNull Long id) {
         Categoria obj = categoriaRepository.findById(id).get();
-
         if(obj != null)
         categoriaRepository.delete(obj);
     }

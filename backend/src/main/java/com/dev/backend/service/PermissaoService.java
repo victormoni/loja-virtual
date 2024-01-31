@@ -34,7 +34,7 @@ public class PermissaoService {
 
     public void excluir(@NonNull Long id) {
         Permissao obj = permissaoRepository.findById(id).get();
-        if(obj != null)
+        if (obj != null)
         permissaoRepository.delete(obj);
     }
 }
