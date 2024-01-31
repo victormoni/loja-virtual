@@ -39,7 +39,7 @@ public class ProdutoImagensService {
         try {
             if (!file.isEmpty()) {
 
-                String nomeImagem = String.valueOf(produto.getId()) + file.getOriginalFilename();
+                String nomeImagem = String.valueOf(produto.getId()) + ". " + file.getOriginalFilename();
                 byte[] bytes = file.getBytes();
                 Path caminho = Paths.get("C:/Users/Victor Moni/OneDrive/Imagens/Imagens/" + nomeImagem);
                 Files.write(caminho, bytes);
@@ -62,10 +62,8 @@ public class ProdutoImagensService {
     }
 
     public void excluir(@NonNull Long id) {
-
         ProdutoImagens obj = produtoImagensRepository.findById(id).get();
-
-        if (obj != null) 
-            produtoImagensRepository.delete(obj);
+        if(obj!=null)
+        produtoImagensRepository.delete(obj);
     }
 }

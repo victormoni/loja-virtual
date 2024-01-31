@@ -34,7 +34,6 @@ public class CidadeService {
 
     public void excluir(@NonNull Long id) {
         Cidade obj = cidadeRepository.findById(id).get();
-
         if(obj != null)
         cidadeRepository.delete(obj);
     }

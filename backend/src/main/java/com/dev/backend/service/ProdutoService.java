@@ -11,6 +11,7 @@ import com.dev.backend.repository.ProdutoRepository;
 
 import lombok.NonNull;
 
+
 @Service
 public class ProdutoService {
 
@@ -33,10 +34,8 @@ public class ProdutoService {
     }
 
     public void excluir(@NonNull Long id) {
-
-            Produto obj = produtoRepository.findById(id).get();
-
-            if (obj != null) 
-                produtoRepository.delete(obj);
+        Produto obj = produtoRepository.findById(id).get();
+        if(obj!=null)
+        produtoRepository.delete(obj);
     }
 }
