@@ -1,4 +1,3 @@
 # Loja Virtual
 
-Desenvolvimento de uma loja virtual emS pring, React e Next.js
-
+Desenvolvimento de uma loja virtual em Spring, React e Next.js
