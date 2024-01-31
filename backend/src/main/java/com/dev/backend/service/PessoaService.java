@@ -34,7 +34,6 @@ public class PessoaService {
 
     public void excluir(@NonNull Long id) {
         Pessoa obj = pessoaRepository.findById(id).get();
-        
         if(obj != null)
         pessoaRepository.delete(obj);
     }
