@@ -28,5 +28,4 @@ public class Estado {
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataAtualizacao;
-
 }

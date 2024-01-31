@@ -33,5 +33,4 @@ public class ProdutoImagens{
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataAtualizacao;
-
 }

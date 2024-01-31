@@ -34,7 +34,6 @@ public class MarcaService {
 
     public void excluir(@NonNull Long id) {
         Marca obj = marcaRepository.findById(id).get();
-        
         if(obj != null)
         marcaRepository.delete(obj);
     }

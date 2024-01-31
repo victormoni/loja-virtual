@@ -33,10 +33,8 @@ public class ProdutoService {
     }
 
     public void excluir(@NonNull Long id) {
-
-            Produto obj = produtoRepository.findById(id).get();
-
-            if (obj != null) 
-                produtoRepository.delete(obj);
+        Produto obj = produtoRepository.findById(id).get();
+        if (obj != null)
+        produtoRepository.delete(obj);
     }
 }

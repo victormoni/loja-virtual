@@ -18,7 +18,6 @@ import org.springframework.web.multipart.MultipartFile;
 import com.dev.backend.entity.ProdutoImagens;
 import com.dev.backend.service.ProdutoImagensService;
 
-
 @RestController
 @RequestMapping("/api/produtoImagens")
 public class ProdutoImagensController {
