@@ -1,29 +1,29 @@
 pipeline {
     agent any
     environment {
-        BRANCH = 'release'
+        BRANCH = 'Release'
     }
     stages {
-        stage('Step 1') {
+        stage('Step1') {
             steps {
-                echo 'Step 1'
+                echo 'Step1'
                 sh 'printenv'
             }
         }
-        stage('Step 2') {
+        stage('Step2') {
             when {
                 expression { BRANCH ==~ /(Master|Hotfix)/ }
             }
             steps {
-                echo 'Step 2'
+                echo 'Step2'
             }
         }
-        stage('Step 3') {
+        stage('Step3') {
             when {
                 expression { BRANCH ==~ /(Release)/ }
             }
             steps {
-                echo 'Step 3'
+                echo 'Step3'
             }
         }
     }
