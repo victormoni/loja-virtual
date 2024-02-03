@@ -1,1 +1,31 @@
-echo "Teste meu primeiro projeto PRIVADO 2!"
+pipeline {
+    agent any
+    environment {
+        BRANCH = 'release'
+    }
+    stages {
+        stage('Step 1') {
+            steps {
+                echo 'Step 1'
+                sh 'printenv'
+            }
+        }
+        stage('Step 2') {
+            when {
+                expression { BRANCH ==~ /(Master|Hotfix)/ }
+            }
+            steps {
+                echo 'Step 2'
+            }
+        }
+        stage('Step 3') {
+            when {
+                expression { BRANCH ==~ /(Release)/ }
+            }
+            steps {
+                echo 'Step 3'
+            }
+        }
+    }
+}
+
