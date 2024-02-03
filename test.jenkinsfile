@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    environment{
+        BRANCH = 'Development'
+    }
     stages {
         stage('Step1') {
             steps {
@@ -8,15 +10,20 @@ pipeline {
             }
         }
         stage('Step2') {
+            when{
+                expression{ BRANCH == 'Master' || BRANCH == 'Hotfix'}
+            }
             steps {
                 echo 'Step2'
             }
         }
         stage('Step3') {
+            when{
+                expression{ BRANCH == 'Development' }
+            }
             steps {
                 echo 'Step3'
             }
         }
     }
 }
-
