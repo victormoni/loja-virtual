@@ -6,13 +6,14 @@ pipeline {
     stages {
         stage('Step1') {
             steps {
-                echo 'Step1'
                 sh 'printenv'
             }
         }
         stage('Step2') {
             when {
-                expression { BRANCH ==~ /(Master|Hotfix)/ }
+                expression { 
+                    BRANCH == 'Master' || BRANCH == 'Hotfix'           
+                 }
             }
             steps {
                 echo 'Step2'
@@ -20,7 +21,9 @@ pipeline {
         }
         stage('Step3') {
             when {
-                expression { BRANCH ==~ /(Release)/ }
+                expression {   
+                    BRANCH == 'Release' 
+                }   
             }
             steps {
                 echo 'Step3'
