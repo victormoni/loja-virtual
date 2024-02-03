@@ -18,14 +18,16 @@ public class PessoaClienteService {
     @Autowired
     private PermissaoPessoaService permissaoPessoaService;
 
+    @Autowired
+    private EmailService emailService;
+
     public Pessoa cadastrar(PessoaClienteRequestDTO pessoaClienteRequestDTO) {
 
         Pessoa pessoa = new PessoaClienteRequestDTO().converter(pessoaClienteRequestDTO);
         pessoa.setDataCriacao(new Date());
-
-        Pessoa pessoaNova = pessoaClienteRepository.saveAndFlush(pessoa);
-        permissaoPessoaService.vincularPessoaPermissaoCliente(pessoaNova);
-        
+        Pessoa objetoNovo = pessoaClienteRepository.saveAndFlush(pessoa);
+        permissaoPessoaService.vincularPessoaPermissaoCliente(objetoNovo);
+        emailService.enviarEmailTexto(objetoNovo.getEmail(), "Cadastro na Loja Tabajara", "O registro na loja foi realizado com sucesso. Em breve você receberá a senha de acesso por email");
         return pessoa;
     }
 }
