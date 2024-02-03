@@ -8,7 +8,7 @@ import com.dev.backend.entity.Pessoa;
 import lombok.Data;
 
 @Data
-public class ClienteRequestDTO {
+public class PessoaClienteRequestDTO {
     
     private String nome;
     private String cpf;
@@ -17,11 +17,11 @@ public class ClienteRequestDTO {
     private String cep;  
     private Cidade cidade;
 
-    public Pessoa converter(ClienteRequestDTO clienteRequestDTO){
+    public Pessoa converter(PessoaClienteRequestDTO pessoaClienteRequestDTO){
         Pessoa pessoa = new Pessoa();
         
-        if(clienteRequestDTO != null)
-        BeanUtils.copyProperties(clienteRequestDTO, pessoa);
+        if(pessoaClienteRequestDTO != null)
+        BeanUtils.copyProperties(pessoaClienteRequestDTO, pessoa);
         return pessoa;  
     }
 }
