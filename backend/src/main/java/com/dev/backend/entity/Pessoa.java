@@ -31,6 +31,11 @@ public class Pessoa{
     private String nome;
     private String cpf;
     private String email;
+    private String codigoRecuperacaoSenha;
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dataEnvioCodigo;
+
     private String senha;
     private String endereco;
     private String cep;
